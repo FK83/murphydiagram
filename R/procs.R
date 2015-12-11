@@ -157,7 +157,7 @@ murphydiagram <- function(f1, f2, y, functional = "expectile", alpha = 0.5, labe
   matplot(x = tseq, y = df[,2:3], type = "l", lty = 1, lwd = 4, xlab = expression(paste("Parameter ", theta)), ylab = "", bty = "n", cex.lab = cex.gen, 
           cex.axis = cex.gen, xlim = xx, ylim = c(0, 1.2*max(df[,2:3])), col = colors)
   abline(h = 0, lty = 2)
-  legend("top", labels, col = colors, lwd = 4, bty = "n", horiz = TRUE, cex = 1.2)
+  if (!is.null(labels)) legend("top", labels, col = colors, lwd = 4, bty = "n", horiz = TRUE, cex = 1.2)
   
 }
 
