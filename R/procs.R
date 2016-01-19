@@ -47,7 +47,7 @@ vHAC <- function(u, prewhite = FALSE, k = NULL, meth = "qs"){
   if (prewhite == TRUE){
     reg.x <- matrix(u[1:(n-1), ], n-1, nreg)
     reg.y <- matrix(u[2:n, ], n-1, nreg)
-    aux <- lm(reg.y~reg.x-1, )
+    aux <- lm(reg.y~reg.x-1)
     beta <- matrix(unname(aux$coefficients), nreg, nreg)
     v <- matrix(unname(aux$residuals), n-1, nreg)
   } else {
@@ -315,3 +315,98 @@ expected_score_quantile <- function(theta, alpha, forecaster = "P") {
   return(out)
 }
 
+fluctuation_test <- function(loss1, loss2, mu = 0.5, dmv_fullsample = TRUE,
+                             lag_truncate = 0, time_labels = NULL,
+                             conf_level = 0.05){
+  
+  # Some input checks
+  if (length(loss1) != length(loss2)){
+    stop("Vectors of losses must have the same length")
+  }
+  if (all(abs(seq(from = 0.1, to = 0.9, by = 0.1) - mu) > 1e-12)){
+    stop("mu must be in {0.1, 0.2, ..., 0.9}")
+  }
+  if (!lag_truncate %in% 0:5){
+    stop("lag_truncate must be in {0, 1, .., 5}")
+  }
+  if (!is.null(time_labels) & length(time_labels) != length(loss1)){
+    warning("Specified time labels are inconsistent - simple integers used instead")
+    time_labels <- NULL
+  }
+  if (!conf_level %in% c(0.05, 0.1)){
+    stop("significance_level must be either 0.05 or 0.1")
+  }
+  
+  # Critical values (two-sided test, from Table 1 of Giacomini/Rossi 2010)
+  # Second/third column correspond to 5/10 percent confidence level
+  CV <- cbind(seq(from = 0.1, to = 0.9, by = 0.1), 
+              c(3.393, 3.179, 3.012, 2.890, 2.779, 2.634, 2.560, 2.433, 2.248),
+              c(3.170, 2.948, 2.766, 2.626, 2.500, 2.356, 2.252, 2.130, 1.950))
+  
+  # Wrapper for HAC variance
+  vHAC2 <- function(ld, lag_truncate){
+    vHAC(ld, k = lag_truncate, meth = "Bartlett")$hac
+  }
+  
+  # Size for fonts etc
+  cex_gen <- 1.6
+  
+  # Window length m
+  P <- length(loss1) # Notation as in GR2010
+  m <- round(mu*P)
+  
+  # Loss differences
+  ld <- loss1 - loss2
+  
+  # Vector of statistics
+  dm_num <- dm_den <- rep(0, P - m + 1)
+  
+  # Loop over time
+  for (jj in m:P){
+    ind <- which(m:P == jj)
+    ld_tmp <- ld[(jj-m+1):jj]
+    dm_num[ind] <- mean(ld_tmp)
+    dm_den[ind] <- sqrt(vHAC2(ld_tmp, lag_truncate)/m)
+  }
+  
+  # Construct statistics
+  
+  # Variant 1: Use full sample for HAC variance
+  s2hat <- vHAC2(ld, lag_truncate)
+  dm1 <- sqrt(m)*dm_num/sqrt(s2hat)
+  
+  # Variant 2: Use rolling samples
+  dm2 <- dm_num/dm_den
+  
+  # Choose statistic
+  if (dmv_fullsample){
+    dm_final <- dm1 
+  } else {
+    dm_final <- dm2
+  }
+  
+  # Select critical value
+  if (conf_level == 0.05){
+    CVs <- CV[abs(CV[, 1] - mu) < 1e-12, 2] * c(-1, 1)  
+  } else if (conf_level == 0.1){
+    CVs <- CV[abs(CV[, 1] - mu) < 1e-12, 3] * c(-1, 1)
+  }
+  
+  # Plot
+  plot(x = m:length(loss1), y = dm_final, ylim = c(-7, 7), bty = "n", ylab = "", 
+       xlab = "Time (End of Rolling Window)",
+       type = "l", col = "cornflowerblue", lwd = 2.5, axes = FALSE, cex.lab = cex_gen)
+  axis(2, cex.axis = cex_gen)
+  abline(h = CVs, lwd = 3.5)
+  abline(h = 0, lwd = 1.8, lty = 2)
+  
+  if (is.null(time_labels)){
+    time_labels <- 1:length(loss1)
+  }
+  inds <- floor(seq(from = m, to = length(time_labels), length.out = 5))
+  axis(1, at = inds, label = time_labels[inds], cex.axis = cex_gen)
+  
+  # Return two-element list which summarizes the results
+  list(df = data.frame(time = time_labels[m:length(loss1)], dmstat = dm_final), CV = CVs)
+  
+}

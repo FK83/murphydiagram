@@ -1,1 +1,1 @@
-exportPattern(murphydiagram, murphydiagram_diff, expected_score_mean, expected_score_quantile)
+exportPattern(murphydiagram, murphydiagram_diff, expected_score_mean, expected_score_quantile, fluctuation_test)
