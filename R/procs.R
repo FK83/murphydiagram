@@ -410,3 +410,38 @@ fluctuation_test <- function(loss1, loss2, mu = 0.5, dmv_fullsample = TRUE,
   list(df = data.frame(time = time_labels[m:length(loss1)], dmstat = dm_final), CV = CVs)
   
 }
+
+# Wrapper function for extremal scores
+extremal_score <- function(x, y, theta, functional = "expectile", alpha = 0.5){
+  if (functional == "expectile"){
+    S.expectile(f = x, y = y, t = theta, alpha = alpha)
+  } else if (functional == "quantile"){
+    S.quantile(f = x, y = y, t = theta, alpha = alpha)
+  } else {
+    stop("invalid input for functional")
+  }
+}
+
+input.check2 <- function(x, y){
+  if (length(y) != length(x) | !is.vector(x) | !is.vector(y)) stop("x and y must be vectors of the same length")
+}
+
+apl_score <- function(x, y, alpha = 0.5){
+  input.check2(x, y)
+  out <- (x - y)
+  ind <- (out > 0)
+  out[ind] <- (1-alpha) * out[ind]
+  out[!ind] <- -alpha * out[!ind]
+  out
+}
+
+ase_score <- function(x, y, alpha = 0.5){
+  input.check2(x, y)
+  out <- (x - y)
+  ind <- (out > 0)
+  out[ind] <- (1-alpha) * (out[ind]^2)
+  out[!ind] <- alpha * (out[!ind]^2)
+  out
+}
+
+
