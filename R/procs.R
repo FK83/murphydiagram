@@ -404,7 +404,7 @@ fluctuation_test <- function(loss1, loss2, mu = 0.5, dmv_fullsample = TRUE,
     time_labels <- 1:length(loss1)
   }
   inds <- floor(seq(from = m, to = length(time_labels), length.out = 5))
-  axis(1, at = inds, label = time_labels[inds], cex.axis = cex_gen)
+  axis(1, at = inds, labels = time_labels[inds], cex.axis = cex_gen)
   
   # Return two-element list which summarizes the results
   list(df = data.frame(time = time_labels[m:length(loss1)], dmstat = dm_final), CV = CVs)
