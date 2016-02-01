@@ -27,7 +27,7 @@ murphydiagram_diff(f1, f2, y, functional = "expectile",
   \item{conf_level}{Level of the confidence bands plotted in \link{murphydiagram_diff}, defaults to 0.95.}
 }
 \value{
-None, used for the effect of creating a plot.
+None, used for the effect of creating a plot. \code{murphydiagram} plots the extremal scores of two forecasting methods. \code{murphydiagram_diff} plots the difference in the extremal scores of two forecasting methods, together with a confidence interval. 
 }
 \references{
 Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2015): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. Preprint available at \url{http://arxiv.org/abs/1503.08195}.
