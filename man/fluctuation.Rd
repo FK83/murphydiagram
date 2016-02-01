@@ -19,7 +19,7 @@ fluctuation_test(loss1, loss2, mu = 0.5, dmv_fullsample = TRUE,
   \item{conf_level}{Confidence level, either \code{0.05} or \code{0.1} (two-sided test).}
 }
 \value{
-List with two elements: 1) Data frame containing the time path of the test statistic, and 2) the relevant critical values. In addition, the function draws a plot which illustratest the test.
+List with two elements: 1) Data frame containing the time path of the test statistic, and 2) the relevant critical values. In addition, the function draws a plot which illustrates the test.
 }
 \references{
 Giacomini, R. and Rossi, B. (2010): Forecast Comparisons in Unstable Environments. Journal of Applied Econometrics 25, 595-620. Working paper version available at \url{http://www.econ.upf.edu/~brossi/GiacominiRossi08.pdf}. 

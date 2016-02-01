@@ -6,7 +6,7 @@
 Data sets with forecasts and realizations
 }
 \description{
-Data sets with forecasts and corresponding realizations, as used in the paper by Ehm et al (2015). In the \link{inflation_mean} data, the outcome variable is continuous;  in \link{recession_probability}
+Data sets with forecasts and corresponding realizations, as used in the paper by Ehm et al (2015). In the \link{inflation_mean} data, the outcome variable is continuous; in the \link{recession_probability}
 data, the outcome is binary.}
 \usage{
 data(inflation_mean)
