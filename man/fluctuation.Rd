@@ -35,7 +35,6 @@ Fabian Krueger
 
 \examples{
 
-\dontrun{
 # Comparison of Inflation Forecasts: 
 # Survey of  Professional Forecasters (SPF) 
 # versus Michigan Survey of Consumers
@@ -54,6 +53,5 @@ tml <- as.numeric(substr(inflation_mean$dt, 1, 4))
 # Fluctuation test
 fluct_test <- fluctuation_test(score_spf, score_michigan, 
                                time_labels = tml, lag_truncate = 4)
-}
 
 }
