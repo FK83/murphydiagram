@@ -21,15 +21,6 @@ S.expectile <- function(f, y, t, alpha){
   out
 }
   
-# Helper function copied from stackexchange, see http://stackoverflow.com/questions/3932038/plot-a-legend-outside-of-the-plotting-area-in-base-graphics
-add_legend <- function(...) {
-  opar <- par(fig=c(0, 1, 0, 1), oma=c(0, 0, 0, 0), 
-              mar=c(0, 0, 0, 0), new=TRUE)
-  on.exit(par(opar))
-  plot(0, 0, type='n', bty='n', xaxt='n', yaxt='n')
-  legend(...)
-}
-
 # Newey-West VCV matrix
 # u: vector of data
 # prewhite: logical, should prewhitening be done?
