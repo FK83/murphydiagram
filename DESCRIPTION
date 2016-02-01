@@ -1,8 +1,8 @@
 Package: murphydiagram
 Type: Package
 Title: Murphy Diagrams for Forecast Comparisons
-Version: 0.1
-Date: 2015-10-22
+Version: 0.11
+Date: 2016-02-01
 Author: Alexander Jordan, Fabian Krueger
 Maintainer: Fabian Krueger <Fabian.Krueger83@gmail.com>
 Description: Data and code for the paper by Ehm, Gneiting, Jordan and Krueger ('Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings', 2015).
