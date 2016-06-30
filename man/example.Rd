@@ -3,7 +3,7 @@
 \alias{expected_score_quantile}
 \title{Analytical Expressions from the Synthetic Example in Section 3.3 and Appendix B}
 \description{
-Functions to compute the analytical expressions in Table 3 of the paper by Ehm et al (2015). These expressions yield the expected score of various forecasters, given the synthetic setup 
+Functions to compute the analytical expressions in Table 3 of the paper by Ehm et al (2016). These expressions yield the expected score of various forecasters, given the synthetic setup 
 studied in Section 3.3 and Appendix B of the paper. The expressions can be used to replicate Figure 2 in the paper.
 }
 \usage{
@@ -16,10 +16,10 @@ expected_score_quantile(theta, alpha, forecaster = "P")
   \item{forecaster}{ID of the forecaster, string of length one. Either "P" (perfect forecaster), "C" (climatological forecaster), "U" (unfocused forecaster), or "SR" (sign-reversed forecaster).}
 }
 \value{
-Expected value of the extremal score, given the synthetic setup described in Section 3.3 of Ehm et al (2015).
+Expected value of the extremal score, given the synthetic setup described in Section 3.3 of Ehm et al (2016).
 }
 \references{
-Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2015): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. Preprint available at \url{http://arxiv.org/abs/1503.08195}.
+Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. Open access via \url{http://onlinelibrary.wiley.com/doi/10.1111/rssb.12154/abstract}.
 }
 \author{
 Alexander Jordan, Fabian Krueger

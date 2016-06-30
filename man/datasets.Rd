@@ -6,7 +6,7 @@
 Data sets with forecasts and realizations
 }
 \description{
-Data sets with forecasts and corresponding realizations, as used in the paper by Ehm et al (2015). In the \link{inflation_mean} data, the outcome variable is continuous; in the \link{recession_probability}
+Data sets with forecasts and corresponding realizations, as used in the paper by Ehm et al (2016). In the \link{inflation_mean} data, the outcome variable is continuous; in the \link{recession_probability}
 data, the outcome is binary.}
 \usage{
 data(inflation_mean)
@@ -16,7 +16,7 @@ data(recession_probability)
 Both data sets are data frames, with the following layout: First column contains the quarterly date, in string format (e.g. "1998Q4" for the fourth quarter of 1998). The second and third columns contain forecasts by two alternative methods. The fourth column contains realizations.}
 
 \source{
-Forecasts are generated as described in Section 4 of Ehm et al (2015).
+Forecasts are generated as described in Section 4 of Ehm et al (2016).
 
 Data sources: Inflation - ``spf'' forecasts and realizations based on data from the Federal Reserve Bank of Philadelphia, \url{http://www.phil.frb.org/research-and-data/real-time-center/} 
 (individual-level CPI forecasts, and real-time data for CPI realizations). ``michigan'' forecasts based on data from the Michigan Survey of Consumers, \url{https://data.sca.isr.umich.edu/tables}, Table 32. Recessions - ``spf'' forecasts and realizations based on data from the 
@@ -51,7 +51,7 @@ legend("topright", legend = c("SPF", "Michigan", "Actual"), fill = 3:1, bty = "n
 }
 
 \references{
-Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2015): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. Preprint available at \url{http://arxiv.org/abs/1503.08195}
+Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. Open access via \url{http://onlinelibrary.wiley.com/doi/10.1111/rssb.12154/abstract}.
 
 }
 
