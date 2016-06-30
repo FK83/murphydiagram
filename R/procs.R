@@ -435,4 +435,26 @@ ase_score <- function(x, y, alpha = 0.5){
   out
 }
 
+patton_2011 <- function(x, y, b = 0){
+  input.check2(x, y)
+  if (!is.numeric(b) | length(b) != 1) stop("b must be a single number")
+  if (any(y <= 0) | any(x <= 0)) stop("This class is defined for strictly 
+                                      positive forecasts and realizations only")
+  if (b == 0){
+    out <- y/x - log(y/x) - 1
+  } else if (b == 1){
+    out <- y*log(y/x) - (y-x)
+  } else {
+    out <- (y^b - x^b)/(b*(b-1)) - ((x^(b-1))/(b-1))*(y-x)
+  }
+  out
+}
+
+patton_2015 <- function(x, y, a = 1){
+  input.check2(x, y)
+  if (!is.numeric(a) | length(a) != 1 | a == 0) stop("a must be a single number
+                                                     different from zero")
+  out <- ((exp(a*y)-exp(a*x))/(a^2)) - (exp(a*x)*(y-x)/a)
+  out
+}
 
