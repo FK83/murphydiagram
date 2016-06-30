@@ -1,3 +1,7 @@
+#' @importFrom stats dnorm lm optimize pnorm qnorm sd
+#' @importFrom graphics abline axis legend lines matplot plot polygon
+#' @export murphydiagram murphydiagram_diff expected_score_mean expected_score_quantile fluctuation_test extremal_score apl_score ase_score patton_2011 patton_2015
+
 # Input checker needed below
 input.check <- function(f, y, t, alpha){
   if ( (length(t) > 1) | (length(alpha) > 1) | (length(f) != length(y)) | any(c(!is.vector(f), !is.vector(y), !is.vector(t), !is.vector(alpha))) ) stop("invalid input") 
