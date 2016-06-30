@@ -2,6 +2,8 @@
 \alias{extremal_score}
 \alias{apl_score}
 \alias{ase_score}
+\alias{patton_2011}
+\alias{patton_2015}
 \title{Scoring functions}
 \description{
 Implementations of some scoring functions discussed in the paper.
