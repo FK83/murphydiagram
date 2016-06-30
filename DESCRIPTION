@@ -5,6 +5,9 @@ Version: 0.11
 Date: 2016-02-01
 Author: Alexander Jordan, Fabian Krueger
 Maintainer: Fabian Krueger <Fabian.Krueger83@gmail.com>
-Description: Data and code for the paper by Ehm, Gneiting, Jordan and Krueger ('Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings', 2015).
+Description: Data and code for the paper by Ehm, Gneiting, Jordan and
+    Krueger ('Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet
+    Representations, and Forecast Rankings', 2015).
 License: GPL-3
 URL: https://sites.google.com/site/fk83research/code
+RoxygenNote: 5.0.1
