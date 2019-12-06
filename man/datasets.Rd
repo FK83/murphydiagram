@@ -19,7 +19,7 @@ Both data sets are data frames, with the following layout: First column contains
 Forecasts are generated as described in Section 4 of Ehm et al (2016).
 
 Data sources: Inflation - ``spf'' forecasts and realizations based on data from the Federal Reserve Bank of Philadelphia, \url{http://www.phil.frb.org/research-and-data/real-time-center/} 
-(individual-level CPI forecasts, and real-time data for CPI realizations). ``michigan'' forecasts based on data from the Michigan Survey of Consumers, \url{https://data.sca.isr.umich.edu/tables}, Table 32. Recessions - ``spf'' forecasts and realizations based on data from the 
+(individual-level CPI forecasts, and real-time data for CPI realizations). ``michigan'' forecasts based on data from the Michigan Survey of Consumers, \url{https://data.sca.isr.umich.edu/tables.php}, Table 32. Recessions - ``spf'' forecasts and realizations based on data from the 
 Federal Reserve Bank of Philadelphia, \url{http://www.phil.frb.org/research-and-data/real-time-center/} (``anxious index'' and real-time data for real GDP growth). The Probit forecasts uses the same real-time data on GDP growth, as
 well as interest rate data from the Federal Reserve Bank of St. Louis, \url{http://research.stlouisfed.org/fred2/} (series TB3MS and GS10).
 
