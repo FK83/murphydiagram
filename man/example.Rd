@@ -19,7 +19,7 @@ expected_score_quantile(theta, alpha, forecaster = "P")
 Expected value of the extremal score, given the synthetic setup described in Section 3.3 of Ehm et al (2016).
 }
 \references{
-Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. Open access via \url{http://onlinelibrary.wiley.com/doi/10.1111/rssb.12154/abstract}.
+Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. \doi{10.1111/rssb.12154} (open access).
 }
 \author{
 Alexander Jordan, Fabian Krueger

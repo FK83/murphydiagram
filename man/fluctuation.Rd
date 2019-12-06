@@ -22,9 +22,9 @@ fluctuation_test(loss1, loss2, mu = 0.5, dmv_fullsample = TRUE,
 List with two elements: 1) Data frame containing the time path of the test statistic, and 2) the relevant critical values. In addition, the function draws a plot which illustrates the test.
 }
 \references{
-Giacomini, R. and Rossi, B. (2010): Forecast Comparisons in Unstable Environments. Journal of Applied Econometrics 25, 595-620.  
+Giacomini, R. and Rossi, B. (2010): Forecast Comparisons in Unstable Environments. Journal of Applied Econometrics 25, 595-620. \doi{10.1002/jae.1177}
 
-Rossi, B. (2013): Advances in Forecasting under Model Instability. In: Handbook of Economic Forecasting, vol. 2, Graham Elliott and Alan Timmermann (eds), pp. 1203-1324. 
+Rossi, B. (2013): Advances in Forecasting under Model Instability. In: Handbook of Economic Forecasting, vol. 2, Graham Elliott and Alan Timmermann (eds), pp. 1203-1324. \doi{10.1016/b978-0-444-62731-5.00021-x}
 }
 \author{
 Fabian Krueger

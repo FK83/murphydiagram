@@ -27,7 +27,7 @@ All functions return a vector of scores (same length as \code{x} and \code{y}). 
 
 }
 \references{
-Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. Open access via \url{http://onlinelibrary.wiley.com/doi/10.1111/rssb.12154/abstract}.
+Ehm, W., Gneiting, T., Jordan, A. and Krueger, F. (2016): Of Quantiles and Expectiles: Consistent Scoring Functions, Choquet Representations, and Forecast Rankings. \emph{Journal of the Royal Statistical Society (Series B)} 78, 1-29. \doi{10.1111/rssb.12154} (open access).
 }
 \author{
 Fabian Krueger
