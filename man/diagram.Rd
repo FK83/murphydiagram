@@ -7,13 +7,13 @@ Visual comparisons of two forecasting methods, allowing to study whether the ran
 scoring functions. See Ehm et al (2016, esp. Sections 3 and 4) for details. 
 }
 \usage{
-murphydiagram(f1, f2, y, functional = "expectile", 
-			        alpha = 0.5, labels = c("Method 1", "Method 2"), 
-			        colors =  NULL, equally_spaced = FALSE)
+murphydiagram(f1, f2, y, functional = "expectile", alpha = 0.5, 
+labels = c("Method 1", "Method 2"), colors =  NULL, 
+equally_spaced = FALSE)
 
 murphydiagram_diff(f1, f2, y, functional = "expectile", 
-				           alpha = 0.5, equally_spaced = FALSE, 
-				           lag_truncate = 0, conf_level = 0.95)
+alpha = 0.5, equally_spaced = FALSE, lag_truncate = 0, 
+conf_level = 0.95)
 }
 \arguments{
   \item{f1, f2}{Vectors of point forecasts}
@@ -44,8 +44,9 @@ Fabian Krueger
 # versus Michigan Survey of Consumers
 
 data(inflation_mean)
-murphydiagram(inflation_mean$spf, inflation_mean$michigan, inflation_mean$rlz, 
-              labels = c("SPF", "Michigan"))
-murphydiagram_diff(inflation_mean$spf, inflation_mean$michigan, inflation_mean$rlz)
+murphydiagram(inflation_mean$spf, inflation_mean$michigan, 
+inflation_mean$rlz, labels = c("SPF", "Michigan"))
+murphydiagram_diff(inflation_mean$spf, inflation_mean$michigan, 
+inflation_mean$rlz, lag_truncate = 4)
 
 }
